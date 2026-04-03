@@ -605,9 +605,6 @@ p {
   padding: clamp(5rem, 10vw, 8rem) 5%;
   position: relative;
   z-index: 1;
-  /* Skip rendering off-screen sections entirely — major paint performance win */
-  content-visibility: auto;
-  contain-intrinsic-size: 0 600px; /* estimated height fallback */
 }
 
 .section-label {
@@ -2037,10 +2034,5 @@ footer p {
   .s-card,
   .p-card {
     transform-style: flat !important;
-  }
-
-  /* Don't paint off-screen sections at all */
-  .section {
-    contain-intrinsic-size: 0 500px;
   }
 }
