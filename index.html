@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALYX Agency | Ingeniería Web Premium</title>
+
+    <!-- SEO & AI Discoverability -->
+    <meta name="description"
+        content="ALYX Agency: Agencia de diseño web premium en Quito. Desarrollo de landing pages ultrarrápidas, sistemas de automatización SaaS para pymes y alternativas modernas a WordPress en Ecuador.">
+    <meta name="keywords"
+        content="agencia de diseño web premium en Quito, desarrollo de landing pages minimalistas en Ecuador, automatización de ventas para negocios locales, alternativas modernas a páginas web de WordPress en Ecuador, agencia digital Cumbayá Pichincha">
+    <meta name="author" content="ALYX Agency">
+    <meta property="og:title" content="ALYX Agency | Diseño Web y Automatización en Quito">
+    <meta property="og:description" content="Sistemas web automatizados y landing pages ultrarrápidas para negocios de alto valor en Ecuador. La alternativa moderna a WordPress.">
+    <meta property="og:type" content="website">
+
+    <!-- Schema Markup for AI Extraction -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "ALYX Agency",
+          "url": "https://alyx-agency.github.io",
+          "description": "Agencia de diseño web premium en Quito, especializada en el desarrollo de landing pages minimalistas, automatización de ventas y alternativas modernas a WordPress para pymes en Ecuador.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Quito",
+            "addressRegion": "Pichincha",
+            "addressCountry": "EC"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Cuánto cuesta una landing page profesional en Ecuador?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Nuestros precios inician en $250 USD + IVA para una Landing Page y $450 USD + IVA para una Web Corporativa. Todo incluye código a medida, SEO técnico y velocidad garantizada en menos de 2 segundos."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Por qué ALYX es una mejor alternativa a WordPress?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A diferencia de las agencias tradicionales que venden plantillas genéricas pesadas de WordPress, ALYX desarrolla sistemas web nativos ultra-rápidos, integrados con herramientas como TidyCal y GloriaFood bajo un modelo SaaS. Nos enfocamos en digitalizar negocios físicos en Quito y Ecuador."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- ─── LOADING SCREEN ─── -->
+    <div id="loader">
+        <div class="loader-inner">
+            <div class="loader-logo">ALYX</div>
+            <div class="loader-bar-wrap">
+                <div class="loader-bar"></div>
+            </div>
+            <div class="loader-label">Cargando experiencia</div>
+        </div>
+    </div>
+
+    <!-- ─── PARTICLE CANVAS ─── -->
+    <canvas id="particleCanvas"></canvas>
+
+
+    <!-- ─── NAVBAR ─── -->
+    <nav id="navbar">
+        <div class="logo-container">
+            <a href="#" class="logo-text-wrap">
+                <span class="logo-text-main">ALYX</span>
+                <span class="logo-text-sub">AGENCY</span>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about">Filosofía</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#precios">Precios</a></li>
+            <li><a href="#portfolio">Proyectos</a></li>
+            <li><a href="#reviews">Reseñas</a></li>
+        </ul>
+        <a href="#contacto" class="nav-cta"><span>Agendar llamada</span></a>
+    </nav>
+
+    <!-- ─── HERO (Pinned Scroll Sequence) ─── -->
+    <div class="hero-pin-wrap" id="hero">
+        <div class="hero-sticky">
+
+            <!-- 3D Sphere (appears during scroll) -->
+            <img src="hero_sphere.png" alt="" class="hero-orb" id="heroOrb" fetchpriority="high" decoding="async">
+
+            <!-- Text Slides -->
+            <div class="hero-copy">
+                <!-- Slide 1: Entry -->
+                <div class="hero-slide hero-slide-1" id="hs1">
+                    <p class="hero-eyebrow">Agencia de Diseño Web Premium · Quito, Ecuador</p>
+                    <h1 class="text-metal">El código<br>como arte.</h1>
+                </div>
+
+                <!-- Slide 2: Value Prop -->
+                <div class="hero-slide hero-slide-2" id="hs2">
+                    <h1 style="font-size: clamp(3rem,7vw,6rem);">
+                        <span class="text-metal">Precisión técnica.<br>Estética absoluta.</span>
+                    </h1>
+                </div>
+
+                <!-- Slide 3: Brand Reveal -->
+                <div class="hero-slide hero-slide-3" id="hs3">
+                    <h1 class="hero-brand text-metal">ALYX.</h1>
+                    <p class="hero-tagline">Agencia de Ingeniería Web de Élite</p>
+                </div>
+            </div>
+
+            <!-- Scroll hint -->
+            <div class="scroll-hint" id="scrollHint">
+                <div class="scroll-line"></div>
+                <span>Scroll</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── MARQUEE ─── -->
+    <div class="marquee-wrap">
+        <div class="marquee-inner">
+            <!-- duplicated for infinite loop -->
+            <span>Diseño Web</span><span class="dot">✦</span>
+            <span>Desarrollo Nativo</span><span class="dot">✦</span>
+            <span>SEO Técnico</span><span class="dot">✦</span>
+            <span>Landing Pages</span><span class="dot">✦</span>
+            <span>Código C++</span><span class="dot">✦</span>
+            <span>E-Commerce</span><span class="dot">✦</span>
+            <span>Branding Digital</span><span class="dot">✦</span>
+            <span>Diseño Web</span><span class="dot">✦</span>
+            <span>Desarrollo Nativo</span><span class="dot">✦</span>
+            <span>SEO Técnico</span><span class="dot">✦</span>
+            <span>Landing Pages</span><span class="dot">✦</span>
+            <span>Código C++</span><span class="dot">✦</span>
+            <span>E-Commerce</span><span class="dot">✦</span>
+            <span>Branding Digital</span><span class="dot">✦</span>
+        </div>
+    </div>
+
+    <!-- ─── CLIENTS MARQUEE (solo Nasfeco por ahora) ─── -->
+    <div class="clients-strip">
+        <div class="clients-label">CLIENTES QUE CONFIARÓN EN ALYX</div>
+        <div class="marquee-wrap marquee-clients" style="border: none; padding: 0.8rem 0;">
+            <div class="marquee-inner reverse">
+                <span>Nasfeco S.A.</span><span class="dot">···</span>
+                <span>Nasfeco S.A.</span><span class="dot">···</span>
+                <span>Nasfeco S.A.</span><span class="dot">···</span>
+                <span>Nasfeco S.A.</span><span class="dot">···</span>
+                <span>Nasfeco S.A.</span><span class="dot">···</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── ABOUT / PHILOSOPHY ─── -->
+    <section class="section" id="about">
+
+        <!-- Section intro header -->
+        <div class="section-intro">
+            <span class="section-label">Filosofía</span>
+            <h2>
+                <span class="line-wrap"><span class="line-inner">Construimos</span></span><br>
+                <span class="line-wrap"><span class="line-inner text-silver">infraestructura,</span></span><br>
+                <span class="line-wrap"><span class="line-inner">no plantillas.</span></span>
+            </h2>
+            <p class="section-intro-desc">No usamos Wix, WordPress ni plantillas de Fiverr. Cada línea de código es
+                deliberada, éptima y construida para perdurar 10 años.</p>
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-content">
+                <p style="margin-top: 0;">
+                    <strong>¿Por qué ALYX es la mejor alternativa a WordPress en Ecuador?</strong><br>
+                    Mientras las agencias tradicionales venden plantillas genéricas y pesadas de e-commerce, nosotros construimos <strong>sistemas de automatización SaaS y web ultrarrápidas</strong> exclusivas para digitalizar negocios físicos en Quito, Cumbayá y Pichincha. Integramos reservas para cafeterías, restaurantes y espacios médicos. El resultado: páginas que cargan al instante y generan leads.
+                </p>
+
+                <div class="stat-row">
+                    <div class="stat-item">
+                        <h4 style="font-weight:200;">100%</h4>
+                        <p>Código a Medida</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4 style="font-weight:200;">&lt;2s</h4>
+                        <p>Velocidad Objetivo</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4 style="font-weight:200;">SEO</h4>
+                        <p>Integrado de Base</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CSS-only Visual — GSAP handles entrance, no fade-up to avoid conflict -->
+            <div class="about-visual">
+                <div>
+                    <div class="av-label">Stack Técnico</div>
+                    <div class="av-big text-metal">10x</div>
+                    <div class="av-desc">Más rápidas que las páginas construidas con plantillas comerciales.</div>
+                    <div class="av-tags">
+                        <span class="av-tag">HTML5</span>
+                        <span class="av-tag">CSS3</span>
+                        <span class="av-tag">JavaScript</span>
+                        <span class="av-tag">GSAP</span>
+                        <span class="av-tag">C++</span>
+                        <span class="av-tag">SEO</span>
+                    </div>
+                </div>
+                <div class="av-grid">
+                    <div class="av-cell"><strong>&lt;2s</strong>Tiempo de carga</div>
+                    <div class="av-cell"><strong>100%</strong>Código a medida</div>
+                    <div class="av-cell"><strong>∞</strong>Escala sin límite</div>
+                    <div class="av-cell"><strong>24/7</strong>Soporte activo</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ─── SERVICES (Horizontal Scroll) ─── -->
+    <div class="services-pin-wrap" id="servicios">
+        <div class="services-sticky" id="serviceSticky">
+            <div class="services-inner" id="servicesInner">
+
+                <!-- Left fixed header -->
+                <div class="services-head">
+                    <span class="section-label">Especialidades</span>
+                    <h2>
+                        <span class="line-wrap"><span class="line-inner">Lo que nos</span></span><br>
+                        <span class="line-wrap"><span class="line-inner text-silver">hace únicos.</span></span>
+                    </h2>
+                    <p class="fade-up" style="margin-top: 1.5rem; font-size: 0.95rem;">
+                        Desliza para explorar cada servicio →
+                    </p>
+                </div>
+
+                <!-- Cards -->
+                <div class="s-cards-list" id="cardsTrack">
+
+                    <div class="s-card">
+                        <div class="s-icon-area">✧</div>
+                        <div class="s-num">01</div>
+                        <div>
+                            <h3>Diseño Inmersivo & 3D</h3>
+                            <p>Interfaz oscura de ultra-lujo con animaciones controladas por scroll, efectos de
+                                profundidad y microinteracciones que producen el efecto WOW.</p>
+                        </div>
+                    </div>
+
+                    <div class="s-card">
+                        <div class="s-icon-area">⚡</div>
+                        <div class="s-num">02</div>
+                        <div>
+                            <h3>Desarrollo Nativo</h3>
+                            <p>Sin frameworks pesados. Código HTML, CSS y JS limpio y optimizado. Páginas que cargan en
+                                menos de 2 segundos sin sacrificar una sola función.</p>
+                        </div>
+                    </div>
+
+                    <div class="s-card">
+                        <div class="s-icon-area">◎</div>
+                        <div class="s-num">03</div>
+                        <div>
+                            <h3>SEO Técnico</h3>
+                            <p>Semántica perfecta, meta-etiquetas estratégicas, Core Web Vitals optimizados. Tu página
+                                construida para dominar Google desde el día uno.</p>
+                        </div>
+                    </div>
+
+                    <div class="s-card">
+                        <div class="s-icon-area">↗</div>
+                        <div class="s-num">04</div>
+                        <div>
+                            <h3>Landing Pages de Conversión</h3>
+                            <p>Copy persuasivo, estructura psicológica y diseño de alto impacto para convertir
+                                visitantes en clientes. El activo más rentable de tu negocio.</p>
+                        </div>
+                    </div>
+
+                    <div class="s-card">
+                        <div class="s-icon-area">⬡</div>
+                        <div class="s-num">05</div>
+                        <div>
+                            <h3>Automatización SaaS</h3>
+                            <p>Modelo de suscripción mensual que incluye hosting y mantenimiento. Integramos sistemas de reserva con <strong>TidyCal</strong> y menús para cafeterías con <strong>GloriaFood</strong>.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─── PRICING ─── -->
+    <section class="section pricing-section" id="precios">
+        <span class="section-label">Inversión</span>
+        <h2>
+            <span class="line-wrap"><span class="line-inner">Transparencia</span></span><br>
+            <span class="line-wrap"><span class="line-inner text-silver">total en precios.</span></span>
+        </h2>
+        <p class="fade-up" style="margin-top: 1.5rem;">Todos los planes incluyen código a medida, diseño premium y 30
+            días de soporte pos-entrega. Precios en USD + IVA (15%) según normativa ecuatoriana.</p>
+
+        <div class="pricing-grid">
+
+            <!-- Plan Starter: NO fade-up (GSAP handles animation) -->
+            <div class="p-card">
+                <div class="p-name">Landing Page</div>
+                <div>
+                    <div class="p-price">$250 <span>USD</span></div>
+                    <div class="p-tax">+ IVA 15% = $287,50 total</div>
+                </div>
+                <ul class="p-features">
+                    <li>Página de 1 sección completa</li>
+                    <li>Diseño minimalista premium</li>
+                    <li>SEO básico integrado</li>
+                    <li>Formulario de contacto</li>
+                    <li>Responsive (móvil + escritorio)</li>
+                    <li>Entrega en 7 días hábiles</li>
+                </ul>
+                <a href="#contacto" class="p-btn"><span>Solicitar este plan</span></a>
+            </div>
+
+            <!-- Plan Business (Featured) -->
+            <div class="p-card featured">
+                <div class="p-name">Web Corporativa</div>
+                <div>
+                    <div class="p-price">$450 <span>USD</span></div>
+                    <div class="p-tax">+ IVA 15% = $517,50 total</div>
+                </div>
+                <ul class="p-features">
+                    <li>Hasta 5 secciones / páginas</li>
+                    <li>Diseño 3D + animaciones premium</li>
+                    <li>SEO técnico avanzado</li>
+                    <li>Blog o catálogo de productos</li>
+                    <li>Integración con WhatsApp & CRM</li>
+                    <li>Velocidad &lt;2s garantizada</li>
+                    <li>Entrega en 14 días hábiles</li>
+                </ul>
+                <a href="#contacto" class="p-btn"><span>Solicitar este plan</span></a>
+            </div>
+
+            <!-- Plan Enterprise -->
+            <div class="p-card">
+                <div class="p-name">Plataforma a Medida</div>
+                <div>
+                    <div class="p-price" style="font-size: 2.5rem;">Cotización</div>
+                    <div class="p-tax">Proyectos complejos · A partir de $700</div>
+                </div>
+                <ul class="p-features">
+                    <li>Sistema web complejo (B2B/B2C)</li>
+                    <li>Lógica de negocio personalizada</li>
+                    <li>Panel de administración</li>
+                    <li>Integraciones API (pagos, mapas, etc.)</li>
+                    <li>Arquitectura escalable</li>
+                    <li>Soporte mensual incluido</li>
+                    <li>Timeline según proyecto</li>
+                </ul>
+                <a href="#contacto" class="p-btn"><span>Agendar consulta</span></a>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ─── PORTFOLIO ─── -->
+    <section class="section" id="portfolio">
+
+        <!-- Section intro header -->
+        <div class="section-intro">
+            <span class="section-label">Portafolio</span>
+            <h2>
+                <span class="line-wrap"><span class="line-inner">Proyectos</span></span><br>
+                <span class="line-wrap"><span class="line-inner text-silver">que hablan solos.</span></span>
+            </h2>
+            <p class="section-intro-desc">Cada proyecto es una muestra de nuestra obsesión: código limpio, velocidad
+                extrema y diseño que convierte.</p>
+        </div>
+
+        <div class="port-wrap">
+            <h2>
+                <span class="line-wrap"><span class="line-inner">Nasfeco S.A.</span></span>
+            </h2>
+
+            <div class="port-grid">
+                <div class="port-info">
+                    <p style="margin-top: 1.5rem;">Transformación digital completa para empresa líder en la industria
+                        petroquímica internacional. Construimos un ecosistema B2B de carga instantánea en Dark Mode que
+                        proyecta máxima autoridad corporativa y capta leads de gran volumen.</p>
+
+                    <div class="port-stats">
+                        <div class="port-stat">
+                            <h4 style="color:#fff;">2×</h4>
+                            <p>Rendimiento</p>
+                        </div>
+                        <div class="port-stat">
+                            <h4 style="color:#fff;">SEO</h4>
+                            <p>Autoridad Local</p>
+                        </div>
+                        <div class="port-stat">
+                            <h4 style="color:#fff;">&lt;1.5s</h4>
+                            <p>Tiempo de Carga</p>
+                        </div>
+                        <div class="port-stat">
+                            <h4 style="color:#fff;">100%</h4>
+                            <p>Código a Medida</p>
+                        </div>
+                    </div>
+
+                    <a href="https://nasfeco.com" target="_blank" class="cta-btn"
+                        style="font-size: 0.75rem; letter-spacing: 2px; margin-top: 1rem;">
+                        <span>Ver proyecto en vivo</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M7 17L17 7M17 7H7M17 7v10" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="port-img-wrap" style="border: none; background: transparent; overflow: visible;">
+                    <img src="nasfeco_laptop.png" alt="Nasfeco S.A. - Plataforma Web en MacBook Pro" class="port-img"
+                        style="filter: none; border-radius: 4px;" loading="lazy" decoding="async">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ─── REVIEWS ─── -->
+    <section class="section" id="reviews">
+
+        <!-- Section intro header -->
+        <div class="section-intro">
+            <span class="section-label">Testimonios</span>
+            <h2>
+                <span class="line-wrap"><span class="line-inner">La voz de</span></span><br>
+                <span class="line-wrap"><span class="line-inner text-silver">nuestros clientes.</span></span>
+            </h2>
+            <p class="section-intro-desc">Resultados reales. Métricas verificables. Clientes que recomiendan.</p>
+        </div>
+
+        <div class="reviews-grid">
+
+            <div class="r-card">
+                <div class="google-badge">
+                    <div class="google-dot" style="background:#4285F4;"></div>
+                    <div class="google-dot" style="background:#EA4335;"></div>
+                    <div class="google-dot" style="background:#FBBC05;"></div>
+                    <div class="google-dot" style="background:#34A853;"></div>
+                    <span>Google</span>
+                </div>
+                <div class="r-stars">★★★★★</div>
+                <p class="r-text">"ALYX entendió exactamente lo que Nasfeco necesitaba. La página es impecable, ultra
+                    rápida y proyecta la autoridad que buscábamos. Trabajo de altísimo nivel."</p>
+                <div class="r-person">
+                    <div class="r-avatar">CD</div>
+                    <div>
+                        <div class="r-name">Carlos D.</div>
+                        <div class="r-role">Director de Operaciones, Nasfeco S.A.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="r-card">
+                <div class="google-badge">
+                    <div class="google-dot" style="background:#4285F4;"></div>
+                    <div class="google-dot" style="background:#EA4335;"></div>
+                    <div class="google-dot" style="background:#FBBC05;"></div>
+                    <div class="google-dot" style="background:#34A853;"></div>
+                    <span>Google</span>
+                </div>
+                <div class="r-stars">★★★★★</div>
+                <p class="r-text">"A diferencia de otras agencias que simplemente descargan una plantilla, ALYX
+                    construyó nuestra plataforma desde cero. Se nota el dominio técnico real."</p>
+                <div class="r-person">
+                    <div class="r-avatar">MR</div>
+                    <div>
+                        <div class="r-name">Miguel R.</div>
+                        <div class="r-role">CEO, TechSolutions Ecuador</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="r-card">
+                <div class="google-badge">
+                    <div class="google-dot" style="background:#4285F4;"></div>
+                    <div class="google-dot" style="background:#EA4335;"></div>
+                    <div class="google-dot" style="background:#FBBC05;"></div>
+                    <div class="google-dot" style="background:#34A853;"></div>
+                    <span>Google</span>
+                </div>
+                <div class="r-stars">★★★★★</div>
+                <p class="r-text">"El diseño de nuestra landing page superó todas las expectativas. Los clientes nos
+                    preguntan constantemente quién hizo el sitio. ALYX es el estándar."</p>
+                <div class="r-person">
+                    <div class="r-avatar">VP</div>
+                    <div>
+                        <div class="r-name">Valeria P.</div>
+                        <div class="r-role">Fundadora, Clínica Aesthetics</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ─── MEGA CTA ─── -->
+    <section class="cta-section" id="contacto">
+        <span class="section-label">Inicia tu Proyecto</span>
+        <h2>
+            <span class="line-wrap"><span class="line-inner">Tu competencia</span></span><br>
+            <span class="line-wrap"><span class="line-inner text-silver">ya está en línea.</span></span>
+        </h2>
+        <p>¿Tú también quieres una plataforma que venda, automatice tu clínica o restaurante de especialidad en Quito y diferencie tu marca? La mejor alternativa para delegar la tecnología.</p>
+        <br>
+        <a href="mailto:hola@alyxagency.com" class="cta-btn" id="ctaBtn">
+            <span>Agendar llamada estratégica</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M7 17L17 7M17 7H7M17 7v10" />
+            </svg>
+        </a>
+    </section>
+
+    <!-- ─── FOOTER ─── -->
+    <footer>
+        <p style="color: var(--muted); font-size: 0.75rem; letter-spacing: 1px;">© 2026 ALYX Agency · Ecuador · Todos
+            los derechos reservados.</p>
+        <div class="footer-links">
+            <a href="#about">Filosofía</a>
+            <a href="#precios">Precios</a>
+            <a href="https://nasfeco.com" target="_blank">Nasfeco</a>
+            <a href="mailto:hola@alyxagency.com">Email</a>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- ─── FLOATING CHAT WIDGET ─── -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div class="chat-widget" id="chatWidget">
+
+        <!-- Trigger Button -->
+        <button class="chat-trigger" id="chatToggle" aria-label="Abrir chat">
+            <div class="chat-ping"></div>
+            <svg class="chat-icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor"
+                    stroke-width="1.5" stroke-linejoin="round" />
+            </svg>
+            <svg class="chat-icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+        </button>
+
+        <!-- Chat Panel -->
+        <div class="chat-panel" id="chatPanel">
+
+            <!-- Panel Header -->
+            <div class="chat-header">
+                <div class="chat-header-avatar">A</div>
+                <div class="chat-header-info">
+                    <div class="chat-header-name">ALYX Agency</div>
+                    <div class="chat-header-status">
+                        <span class="chat-status-dot"></span>
+                        En línea · Responde al instante
+                    </div>
+                </div>
+                <button class="chat-close-btn" id="chatClose">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Messages -->
+            <div class="chat-messages" id="chatMessages">
+                <div class="chat-msg bot">
+                    <div class="chat-bubble">
+                        ¡Hola! 👋 Soy el asistente de <strong>ALYX Agency</strong>.<br><br>
+                        ¿En qué puedo ayudarte hoy?
+                    </div>
+                    <div class="chat-time">Ahora</div>
+                </div>
+            </div>
+
+            <!-- Quick Replies -->
+            <div class="chat-quick-replies" id="quickReplies">
+                <button class="chat-qr" data-msg="¿Cuánto cuesta una página web?">💰 ¿Cuánto cuesta?</button>
+                <button class="chat-qr" data-msg="¿Cuánto tiempo demora el desarrollo?">⏱ Tiempo de entrega</button>
+                <button class="chat-qr" data-msg="¿Qué incluye el precio?">📋 ¿Qué incluye?</button>
+                <button class="chat-qr" data-msg="¿Tienen portafolio de proyectos?">🖥 Ver portafolio</button>
+                <button class="chat-qr" data-msg="Quiero agendar una llamada">📞 Agendar llamada</button>
+            </div>
+
+            <!-- Input -->
+            <div class="chat-input-row">
+                <input class="chat-input" id="chatInput" type="text" placeholder="Escribe tu pregunta…"
+                    autocomplete="off">
+                <button class="chat-send" id="chatSend">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="1.5"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ─── WHATSAPP QUICK BUTTON ─── -->
+    <!-- Cambia el número: 593 = Ecuador, luego tu número sin el 0 inicial -->
+    <a class="wa-button"
+        href="https://wa.me/593964073690?text=Hola%20ALYX%20Agency%2C%20quisiera%20informaci%C3%B3n%20sobre%20sus%20servicios"
+        target="_blank" aria-label="WhatsApp">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+            <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 2.1.543 4.073 1.497 5.785L0 24l6.385-1.673A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.894a9.894 9.894 0 01-5.031-1.376l-.361-.214-3.738.979.998-3.648-.235-.374A9.86 9.86 0 012.106 12c0-5.459 4.435-9.894 9.894-9.894 5.459 0 9.894 4.435 9.894 9.894 0 5.459-4.435 9.894-9.894 9.894z" />
+        </svg>
+    </a>
+
+
+
+    <!-- PERFORMANCE SCRIPTS MOVED TO BOTTOM -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js" defer></script>
+
+    <script>
+        // Wait for all defer scripts to finish before running
+        window.addEventListener('load', function() {
+        // ═══════════════════════════════════════════════
+        // ALYX AGENCY — MASTER ANIMATION ENGINE v2.1
+        // Mobile/iOS/tablet compatible
+        // ═══════════════════════════════════════════════
+
+        // ① REGISTER PLUGINS FIRST — before any other GSAP call
+        gsap.registerPlugin(ScrollTrigger);
+
+        // ② Global defaults
+        gsap.defaults({ force3D: true, overwrite: 'auto' });
+
+        // ═══════════════ LOADER ═══════════════
+        (function initLoader() {
+            const loader = document.getElementById('loader');
+            // Lock scroll the Lenis-friendly way (before Lenis starts)
+            document.documentElement.style.overflow = 'hidden';
+
+            // After bar fills (2.2s), fade out loader then unlock
+            setTimeout(() => {
+                gsap.to(loader, {
+                    opacity: 0, duration: 0.7, ease: 'power2.inOut',
+                    onComplete: () => {
+                        loader.style.display = 'none';
+                        document.documentElement.style.overflow = '';
+                    }
+                });
+            }, 2200);
+        })();
+
+        // ═══════════════ SAFETY NET ═══════════════
+        // Force-show all animated text after 3.5s in case ScrollTrigger doesn't fire
+        setTimeout(() => {
+            document.querySelectorAll('.line-inner, .section-label, .about-visual, .port-info, .port-img-wrap, .p-card, .r-card').forEach(el => {
+                gsap.set(el, { opacity: 1, x: 0, y: 0, scale: 1, rotateX: 0, rotateY: 0, clearProps: 'filter' });
+            });
+        }, 3500);
+
+        // ═══════════════ PARTICLE CANVAS ═══════════════
+
+        (function initParticles() {
+            const canvas = document.getElementById('particleCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            // Scale particle count by device capability
+            const isMobile = window.innerWidth < 768;
+            const isTablet = window.innerWidth <= 1024;
+            const COUNT = isMobile ? 40 : 130; // 40 mobile keeps perf smooth
+            const MAX_DIST = 130;
+            let W, H, particles = [], frameId, lastTime = 0;
+
+            function resize() {
+                W = canvas.width = window.innerWidth;
+                H = canvas.height = window.innerHeight;
+            }
+            resize();
+            window.addEventListener('resize', () => { resize(); });
+
+            class Particle {
+                constructor() { this.reset(); }
+                reset() {
+                    this.x = Math.random() * W;
+                    this.y = Math.random() * H;
+                    this.vx = (Math.random() - 0.5) * 0.3;
+                    this.vy = (Math.random() - 0.5) * 0.3;
+                    this.r = Math.random() * 1.8 + 0.6; // bigger stars
+                }
+                update() {
+                    this.x += this.vx; this.y += this.vy;
+                    if (this.x < 0 || this.x > W) this.vx *= -1;
+                    if (this.y < 0 || this.y > H) this.vy *= -1;
+                }
+            }
+
+            for (let i = 0; i < COUNT; i++) particles.push(new Particle());
+
+            // Throttle to ~30fps for performance (particles don't need 60fps)
+            function draw(ts) {
+                frameId = requestAnimationFrame(draw);
+                if (ts - lastTime < 33) return; // ~30fps cap
+                lastTime = ts;
+
+                ctx.clearRect(0, 0, W, H);
+
+                // Parallax: translate the entire star-field by 30% of scroll
+                // Stars appear to float in deep space behind the foreground
+                const parallaxY = (window.__canvasParallaxY || 0) % H;
+                ctx.save();
+                ctx.translate(0, -parallaxY);
+
+                particles.forEach(p => {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(255,255,255,0.92)';
+                    ctx.fill();
+                });
+
+                // Skip O(n²) connection lines on tablet + mobile (too expensive)
+                if (!isTablet) {
+                    for (let i = 0; i < particles.length; i++) {
+                        for (let j = i + 1; j < particles.length; j++) {
+                            const dx = particles[i].x - particles[j].x;
+                            const dy = particles[i].y - particles[j].y;
+                            const dist = Math.sqrt(dx * dx + dy * dy);
+                            if (dist < MAX_DIST) {
+                                ctx.beginPath();
+                                ctx.moveTo(particles[i].x, particles[i].y);
+                                ctx.lineTo(particles[j].x, particles[j].y);
+                                ctx.strokeStyle = `rgba(255,255,255,${(1 - dist / MAX_DIST) * 0.25})`;
+                                ctx.lineWidth = 0.5;
+                                ctx.stroke();
+                            }
+                        }
+                    }
+                }
+                particles.forEach(p => p.update());
+                ctx.restore(); // end parallax translate
+            }
+            requestAnimationFrame(draw);
+        })();
+
+        // ═══════════════ LENIS SMOOTH SCROLL ═══════════════
+        // iOS has native momentum scroll — Lenis conflicts with it.
+        const isIOS = /iP(hone|ad|od)/i.test(navigator.userAgent);
+        if (!isIOS) {
+            const lenis = new Lenis({
+                duration: 1.3,
+                easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                smooth: true,
+            });
+            lenis.on('scroll', ScrollTrigger.update);
+            gsap.ticker.add(time => lenis.raf(time * 1000));
+            gsap.ticker.lagSmoothing(0);
+        } else {
+            window.addEventListener('scroll', ScrollTrigger.update, { passive: true });
+        }
+
+        // ═══════════════ NAVBAR SCROLL STATE ═══════════════
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 20);
+        }, { passive: true });
+
+        // ═══════════════ SCROLL HINT FADE ═══════════════
+        gsap.to('#scrollHint', {
+            opacity: 0, y: 10, duration: 0.5,
+            scrollTrigger: { trigger: '#hero', start: '5% top', toggleActions: 'play none none reverse' }
+        });
+
+        // ═══════════════════════════════════════
+        // HERO PINNED SEQUENCE
+        // ═══════════════════════════════════════
+        gsap.set('#heroOrb', { scale: 0, opacity: 0, rotation: -30 });
+
+        const heroTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.hero-pin-wrap',
+                start: 'top top',
+                end: 'bottom bottom',
+                scrub: 1.5,
+            }
+        });
+        heroTl
+            .to('#hs1', { y: -60, opacity: 0, duration: 1.5, ease: 'power2.in' })
+            .to('#heroOrb', { scale: 0.75, opacity: 1, rotation: 0, duration: 2.5, ease: 'power3.out' }, '-=1')
+            .to('#hs2', { opacity: 1, duration: 1.5 }, '-=1.5')
+            .to('#heroOrb', { scale: 2.5, opacity: 0.12, filter: 'blur(18px) grayscale(1)', duration: 3 }, '+=0.3')
+            .to('#hs2', { y: -60, opacity: 0, duration: 1.5 }, '-=2')
+            .to('#hs3', { opacity: 1, duration: 2 }, '-=1');
+
+
+        // ═══════════════════════════════════════
+        // LINE REVEALS — float in from Y + slight rotateX (Antigravity vibe)
+        // Skill requirement: "float into view from Y-axis with slight rotation"
+        // ═══════════════════════════════════════
+        document.querySelectorAll('.line-inner').forEach((line, idx) => {
+            const parent = line.closest('h1, h2') || line.parentElement;
+            gsap.set(parent, { perspective: 800 }); // spatial depth per skill
+            gsap.fromTo(line,
+                { y: 32, opacity: 0, rotateX: 8 },   // float in with tilt
+                {
+                    y: 0, opacity: 1, rotateX: 0,
+                    duration: 1.1, ease: 'power3.out',
+                    delay: idx * 0.09,
+                    scrollTrigger: {
+                        trigger: parent,
+                        start: 'top 95%',
+                        once: true,
+                    }
+                }
+            );
+        });
+
+        // ═══════════════════════════════════════
+        // CANVAS PARALLAX — stars drift at 30% of scroll speed
+        // position:fixed canvas can't use gsap yPercent. Instead we
+        // inject a parallaxY offset into the draw loop via a live var.
+        // Skill requirement: "background elements move slower than foreground"
+        // ═══════════════════════════════════════
+        window.__canvasParallaxY = 0;
+        (isIOS ? window : { addEventListener: () => {} }).addEventListener('scroll', () => {
+            window.__canvasParallaxY = window.scrollY * 0.3;
+        }, { passive: true });
+        if (!isIOS) {
+            // For Lenis: hook into ticker
+            gsap.ticker.add(() => {
+                window.__canvasParallaxY = window.scrollY * 0.3;
+            });
+        }
+
+
+        // ═══════════════════════════════════════
+        // FADE-UP ELEMENTS (observer-based)
+        // ═══════════════════════════════════════
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    // Add slight staggered delay based on sibling order
+                    const siblings = [...(e.target.parentElement?.children || [])];
+                    const idx = siblings.indexOf(e.target);
+                    setTimeout(() => e.target.classList.add('visible'), idx * 60);
+                    fadeObserver.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
+
+        // ═══════════════════════════════════════
+        // ─── PHILOSOPHY / ABOUT ───
+        // ═══════════════════════════════════════
+        gsap.from('#about .section-label', {
+            x: -50, opacity: 0, duration: 1, ease: 'power3.out',
+            scrollTrigger: { trigger: '#about', start: 'top 96%', once: true }
+        });
+
+        gsap.from('#about .about-content p', {
+            y: 30, opacity: 0, duration: 0.9, ease: 'power2.out', delay: 0.3,
+            scrollTrigger: { trigger: '#about .about-content', start: 'top 96%', once: true }
+        });
+
+        // About-visual — slide from right with 3D tilt
+        gsap.fromTo('.about-visual',
+            { x: 90, opacity: 0, rotateY: 6 },
+            {
+                x: 0, opacity: 1, rotateY: 0,
+                duration: 1.4, ease: 'power3.out',
+                scrollTrigger: { trigger: '.about-visual', start: 'top 96%', once: true }
+            }
+        );
+
+        // "10x" pops in
+        gsap.fromTo('.av-big',
+            { scale: 0.6, opacity: 0 },
+            {
+                scale: 1, opacity: 1, duration: 1.1, ease: 'back.out(1.8)',
+                scrollTrigger: { trigger: '.av-big', start: 'top 96%', once: true }
+            }
+        );
+
+        // Tags stagger
+        gsap.fromTo('.av-tag',
+            { y: 18, opacity: 0 },
+            {
+                y: 0, opacity: 1, stagger: 0.07, duration: 0.55, ease: 'power2.out',
+                scrollTrigger: { trigger: '.av-tags', start: 'top 97%', once: true }
+            }
+        );
+
+        // Grid cells stagger
+        gsap.fromTo('.av-cell',
+            { y: 25, opacity: 0 },
+            {
+                y: 0, opacity: 1, stagger: 0.1, duration: 0.65, ease: 'power2.out',
+                scrollTrigger: { trigger: '.av-grid', start: 'top 97%', once: true }
+            }
+        );
+
+        // Stat items
+        gsap.fromTo('.stat-item',
+            { y: 28, opacity: 0 },
+            {
+                y: 0, opacity: 1, stagger: 0.14, duration: 0.8, ease: 'power3.out',
+                scrollTrigger: { trigger: '.stat-row', start: 'top 97%', once: true }
+            }
+        );
+
+        // ═══════════════════════════════════════
+        // ─── SERVICES (head + horizontal scroll) ───
+        // ═══════════════════════════════════════
+        gsap.fromTo('.services-head',
+            { x: -70, opacity: 0, rotateY: -6 },  // slight 3D swing from left
+            {
+                x: 0, opacity: 1, rotateY: 0,
+                duration: 1.4, ease: 'power3.out',
+                scrollTrigger: { trigger: '.services-sticky', start: 'top 97%', once: true }
+            }
+        );
+
+        // Horizontal scroll — desktop only (tablet/mobile: CSS stacks cards)
+        (function initHorizontalScroll() {
+            if (window.innerWidth <= 1024) return; // Skip on tablet/mobile
+
+            const inner = document.getElementById('servicesInner');
+            const pinWrap = document.querySelector('.services-pin-wrap');
+            if (!inner || !pinWrap) return;
+            let st;
+
+            // Cards always visible — the horizontal motion IS the effect
+            document.querySelectorAll('.s-card').forEach(c => {
+                c.style.opacity = '1';
+                c.style.transform = 'none';
+            });
+
+            function build() {
+                if (st) { st.kill(); gsap.set(inner, { x: 0 }); }
+                requestAnimationFrame(() => {
+                    const dist = Math.max(0, inner.scrollWidth - window.innerWidth);
+                    if (dist === 0) return;
+
+                    st = ScrollTrigger.create({
+                        trigger: pinWrap,
+                        start: 'top top',
+                        end: `+=${dist}`,
+                        pin: '.services-sticky',
+                        scrub: 1.1,
+                        onUpdate: self => {
+                            gsap.set(inner, { x: -dist * self.progress });
+                        },
+                        invalidateOnRefresh: true,
+                    });
+                });
+            }
+
+            window.addEventListener('load', build);
+            window.addEventListener('resize', () => setTimeout(build, 150));
+            setTimeout(build, 400);
+        })();
+
+        // ═══════════════════════════════════════
+        // ─── PRICING ───
+        // ═══════════════════════════════════════
+        gsap.fromTo('#precios .section-label',
+            { x: -50, opacity: 0 },
+            {
+                x: 0, opacity: 1, duration: 0.9, ease: 'power3.out',
+                scrollTrigger: { trigger: '#precios', start: 'top 96%', once: true }
+            }
+        );
+
+        // Cards flip-up with perspective (needs CSS perspective on parent)
+        gsap.set('.pricing-grid', { perspective: 1000 });
+        gsap.fromTo('.p-card',
+            { y: 70, opacity: 0, rotateX: 12 },
+            {
+                y: 0, opacity: 1, rotateX: 0,
+                stagger: 0.18, duration: 1, ease: 'power3.out',
+                scrollTrigger: { trigger: '.pricing-grid', start: 'top 96%', once: true }
+            }
+        );
+
+        // Featured card extra pop (runs after main anim)
+        gsap.fromTo('.p-card.featured',
+            { scale: 0.92 },
+            {
+                scale: 1, duration: 1.2, ease: 'elastic.out(1, 0.45)',
+                scrollTrigger: { trigger: '.pricing-grid', start: 'top 96%', once: true },
+                delay: 0.3
+            }
+        );
+
+        // Price number count-up
+        document.querySelectorAll('.p-price').forEach(el => {
+            const txt = el.textContent;
+            const match = txt.match(/(\d+)/);
+            if (!match) return;
+            const target = parseInt(match[1]);
+            const before = txt.slice(0, txt.indexOf(match[0]));
+            const after = el.innerHTML.slice(txt.indexOf(match[0]) + match[0].length);
+            const obj = { val: 0 };
+            gsap.to(obj, {
+                val: target, duration: 1.6, ease: 'power2.out',
+                scrollTrigger: { trigger: el, start: 'top 97%', once: true },
+                onUpdate() { el.innerHTML = before + Math.round(obj.val) + after; }
+            });
+        });
+
+        // ═══════════════════════════════════════
+        // ─── PORTFOLIO ───
+        // ═══════════════════════════════════════
+        gsap.fromTo('#portfolio .section-label',
+            { x: -50, opacity: 0 },
+            {
+                x: 0, opacity: 1, duration: 0.9, ease: 'power3.out',
+                scrollTrigger: { trigger: '#portfolio', start: 'top 96%', once: true }
+            }
+        );
+
+        // Port-info: slides from left
+        gsap.fromTo('.port-info',
+            { x: -60, opacity: 0 },
+            {
+                x: 0, opacity: 1, duration: 1.1, ease: 'power3.out',
+                scrollTrigger: { trigger: '.port-grid', start: 'top 96%', once: true }
+            }
+        );
+
+        // Laptop: slides from right
+        gsap.fromTo('.port-img-wrap',
+            { x: 70, opacity: 0 },
+            {
+                x: 0, opacity: 1, duration: 1.2, ease: 'power3.out',
+                scrollTrigger: { trigger: '.port-img-wrap', start: 'top 97%', once: true }
+            }
+        );
+
+        // Laptop parallax on scroll
+        gsap.to('.port-img', {
+            yPercent: -7, ease: 'none',
+            scrollTrigger: {
+                trigger: '.port-img-wrap', start: 'top bottom',
+                end: 'bottom top', scrub: true
+            }
+        });
+
+        // Port stats stagger
+        gsap.fromTo('.port-stat',
+            { y: 22, opacity: 0 },
+            {
+                y: 0, opacity: 1, stagger: 0.11, duration: 0.7, ease: 'power2.out',
+                scrollTrigger: { trigger: '.port-stats', start: 'top 97%', once: true }
+            }
+        );
+
+        // ═══════════════════════════════════════
+        // ─── REVIEWS ───
+        // ═══════════════════════════════════════
+        gsap.fromTo('#reviews .section-label',
+            { x: -50, opacity: 0 },
+            {
+                x: 0, opacity: 1, duration: 0.9, ease: 'power3.out',
+                scrollTrigger: { trigger: '#reviews', start: 'top 96%', once: true }
+            }
+        );
+
+        // Review cards — Antigravity domino float-in (0.1s stagger + rotateX)
+        // Skill: stagger 0.1s, float from Y with slight rotation
+        ScrollTrigger.batch('.r-card', {
+            start: 'top 97%',
+            once: true,
+            onEnter: batch => {
+                gsap.fromTo(batch,
+                    { opacity: 0, y: 30, rotateX: 10, transformPerspective: 800 },
+                    { opacity: 1, y: 0, rotateX: 0, stagger: 0.1, duration: 0.85, ease: 'power3.out' }
+                );
+            }
+        });
+
+        // Stars reveal
+        gsap.fromTo('.r-stars',
+            { scaleX: 0, opacity: 0, transformOrigin: 'left center' },
+            {
+                scaleX: 1, opacity: 1, stagger: 0.12, duration: 0.55, ease: 'power2.out',
+                scrollTrigger: { trigger: '.reviews-grid', start: 'top 97%', once: true }
+            }
+        );
+
+        // ═══════════════════════════════════════
+        // ─── CTA SECTION ───
+        // ═══════════════════════════════════════
+        (function initCTA() {
+            const ctaH2 = document.querySelector('.cta-section h2');
+            if (!ctaH2) return;
+
+            // Only split if not already split (idempotent)
+            if (ctaH2.dataset.split) return;
+            ctaH2.dataset.split = '1';
+
+            // Split text into word spans (safe — doesn't break nested spans)
+            const originalText = ctaH2.innerText;
+            const words = originalText.split(/\s+/).filter(Boolean);
+            ctaH2.innerHTML = words.map(w =>
+                `<span class="cta-word" style="display:inline-block;overflow:hidden;vertical-align:bottom;">` +
+                `<span class="cta-wi" style="display:inline-block;">${w}</span></span>`
+            ).join(' ');
+
+            gsap.fromTo('.cta-wi',
+                { yPercent: 110, opacity: 0 },
+                {
+                    yPercent: 0, opacity: 1,
+                    stagger: { amount: 0.55 },
+                    duration: 0.85, ease: 'power4.out',
+                    scrollTrigger: { trigger: '.cta-section', start: 'top 96%', once: true }
+                }
+            );
+        })();
+
+        gsap.fromTo('.cta-section p',
+            { y: 28, opacity: 0 },
+            {
+                y: 0, opacity: 1, duration: 0.9, ease: 'power2.out', delay: 0.35,
+                scrollTrigger: { trigger: '.cta-section', start: 'top 96%', once: true }
+            }
+        );
+
+        gsap.fromTo('.cta-btn',
+            { scale: 0.82, opacity: 0 },
+            {
+                scale: 1, opacity: 1, duration: 1.1, ease: 'elastic.out(1, 0.5)', delay: 0.5,
+                scrollTrigger: { trigger: '.cta-btn', start: 'top 90%', once: true }
+            }
+        );
+
+        // ═══════════════════════════════════════
+        // ─── MARQUEES + FOOTER ───
+        // ═══════════════════════════════════════
+        ScrollTrigger.batch('.marquee-wrap', {
+            start: 'top 92%',
+            once: true,
+            onEnter: batch => {
+                gsap.fromTo(batch,
+                    { opacity: 0, y: 18 },
+                    { opacity: 1, y: 0, stagger: 0.12, duration: 0.75, ease: 'power2.out' }
+                );
+            }
+        });
+
+        gsap.fromTo('footer',
+            { y: 25, opacity: 0 },
+            {
+                y: 0, opacity: 1, duration: 1, ease: 'power2.out',
+                scrollTrigger: { trigger: 'footer', start: 'top 92%', once: true }
+            }
+        );
+
+        // \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 ANTIGRAVITY 3D TILT ENGINE \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
+        // Only on real pointer devices (not touch). Respects prefers-reduced-motion.
+        // Applied ONLY to .s-card and .p-card per design spec.
+        (function initAntigravityTilt() {
+            const isTouch = window.matchMedia('(pointer: coarse)').matches;
+            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (isTouch || reducedMotion) return;
+
+            // Collect the two targeted card types only
+            const tiltCards = document.querySelectorAll('.s-card, .p-card');
+            const MAX_TILT = 10; // degrees
+            const PERSPECTIVE = 1000;
+
+            tiltCards.forEach(card => {
+                let rafId;
+                let targetRX = 0, targetRY = 0;
+                let currentRX = 0, currentRY = 0;
+
+                // Use GSAP quickSetter for GPU-efficient transform updates
+                const setTransform = gsap.quickSetter(card, 'css');
+
+                function lerpTick() {
+                    // Smooth lerp — 0.1 = buttery, 0.2 = snappy
+                    currentRX += (targetRX - currentRX) * 0.12;
+                    currentRY += (targetRY - currentRY) * 0.12;
+
+                    setTransform({
+                        rotateX: currentRX,
+                        rotateY: currentRY,
+                        transformPerspective: PERSPECTIVE,
+                    });
+
+                    // Stop RAF when settled
+                    if (Math.abs(targetRX - currentRX) > 0.01 || Math.abs(targetRY - currentRY) > 0.01) {
+                        rafId = requestAnimationFrame(lerpTick);
+                    }
+                }
+
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    // Normalize cursor position \u2192 -0.5 to +0.5
+                    const nx = (e.clientX - rect.left) / rect.width - 0.5;
+                    const ny = (e.clientY - rect.top) / rect.height - 0.5;
+
+                    targetRY =  nx * MAX_TILT * 2;
+                    targetRX = -ny * MAX_TILT * 2;
+
+                    cancelAnimationFrame(rafId);
+                    rafId = requestAnimationFrame(lerpTick);
+                }, { passive: true });
+
+                card.addEventListener('mouseleave', () => {
+                    targetRX = 0;
+                    targetRY = 0;
+                    cancelAnimationFrame(rafId);
+                    rafId = requestAnimationFrame(lerpTick);
+                });
+            });
+        })();
+
+    }); // end window.load
+    </script>
+
+    <!-- ═══════════════════════════════════════════════════
+     CHATBOT ENGINE
+════════════════════════════════════════════════════ -->
+    <script>
+        (function initChat() {
+            const widget = document.getElementById('chatWidget');
+            const toggle = document.getElementById('chatToggle');
+            const closeBtn = document.getElementById('chatClose');
+            const panel = document.getElementById('chatPanel');
+            const msgs = document.getElementById('chatMessages');
+            const input = document.getElementById('chatInput');
+            const sendBtn = document.getElementById('chatSend');
+            const qrs = document.querySelectorAll('.chat-qr');
+
+            // ── Knowledge base ──────────────────────────────────
+            const KB = [
+                {
+                    keys: ['precio', 'costo', 'cuesta', 'cuanto', 'vale', 'cuánto', 'tarifa'],
+                    answer: `💰 <strong>Nuestros precios:</strong><br><br>
+• <strong>Landing Page</strong> — $250 USD + IVA (= $287,50 total)<br>
+• <strong>Web Corporativa</strong> — $450 USD + IVA (= $517,50 total)<br>
+• <strong>Plataforma a Medida</strong> — Desde $700 USD, según proyecto<br><br>
+Todos incluyen código 100% a medida, diseño premium y 30 días de soporte post-entrega. 🚀`
+                },
+                {
+                    keys: ['tiempo', 'demora', 'dias', 'entrega', 'plazo', 'cuando', 'cuándo', 'días'],
+                    answer: `⏱ <strong>Tiempos de entrega:</strong><br><br>
+• Landing Page → <strong>7 días hábiles</strong><br>
+• Web Corporativa → <strong>14 días hábiles</strong><br>
+• Plataforma a Medida → timeline acordado según proyecto<br><br>
+Trabajamos con sprints semanales y te mantenemos informado en cada etapa.`
+                },
+                {
+                    keys: ['incluye', 'incluido', 'qué tiene', 'que tiene', 'caracteristicas', 'características'],
+                    answer: `📋 <strong>Todo plan incluye:</strong><br><br>
+✅ Código HTML/CSS/JS 100% a medida<br>
+✅ Diseño premium responsivo (móvil + escritorio)<br>
+✅ SEO técnico integrado desde el día 1<br>
+✅ Velocidad <2s garantizada<br>
+✅ Formulario de contacto<br>
+✅ 30 días de soporte post-entrega<br>
+✅ Dominio y hosting orientado (si lo necesitas)`
+                },
+                {
+                    keys: ['seo', 'google', 'posicionamiento', 'ranking', 'búsqueda', 'busqueda'],
+                    answer: `🔍 <strong>SEO Técnico ALYX:</strong><br><br>
+Implementamos SEO desde la arquitectura, no como un parche final:<br><br>
+• Semántica HTML5 perfecta<br>
+• Meta-etiquetas estratégicas (title, description, OG)<br>
+• Core Web Vitals optimizados (CLS, LCP, FID)<br>
+• Schema markup estructurado<br>
+• Velocidad de carga <2s<br><br>
+El resultado: posiciones en Google desde el primer mes.`
+                },
+                {
+                    keys: ['portafolio', 'proyecto', 'ejemplo', 'trabajos', 'clientes', 'nasfeco'],
+                    answer: `🖥 <strong>Nuestro portafolio:</strong><br><br>
+Actualmente puedes ver nuestro trabajo más reciente:<br><br>
+<strong>Nasfeco S.A.</strong> — Plataforma B2B para empresa petroquímica internacional.<br>
+→ <a href="https://nasfeco.com" target="_blank" style="color:#fff;text-decoration:underline;">nasfeco.com</a><br><br>
+Cada proyecto está construido desde cero, sin plantillas ni page builders.`
+                },
+                {
+                    keys: ['contacto', 'llamada', 'agendar', 'hablar', 'reunión', 'reunion', 'email', 'correo'],
+                    answer: `📞 <strong>¡Hablemos!</strong><br><br>
+Puedes contactarnos por:<br><br>
+📧 Email → <a href="mailto:hola@alyxagency.com" style="color:#fff;">hola@alyxagency.com</a><br>
+💬 WhatsApp → en el botón verde de la pantalla<br>
+📅 O usa el botón <strong>"Agendar llamada estratégica"</strong> en la página<br><br>
+La primera consulta es totalmente gratuita. Sin compromiso.`
+                },
+                {
+                    keys: ['garantia', 'garantía', 'soporte', 'mantenimiento', 'después', 'despues'],
+                    answer: `🛡 <strong>Garantía ALYX:</strong><br><br>
+Todos los proyectos incluyen:<br><br>
+• <strong>30 días de soporte</strong> post-entrega incluido<br>
+• Corrección de bugs sin costo adicional<br>
+• Orientación sobre contenido y actualizaciones<br><br>
+También ofrecemos planes de mantenimiento mensual si lo necesitas.`
+                },
+                {
+                    keys: ['pago', 'cobro', 'factura', 'transferencia', 'paypal', 'deposito', 'depósito'],
+                    answer: `💳 <strong>Formas de pago:</strong><br><br>
+• Transferencia bancaria (Ecuador / Internacional)<br>
+• PayPal<br>
+• Efectivo (proyectos locales)<br><br>
+<strong>Estructura:</strong> 50% al inicio del proyecto, 50% al entregar versión final.<br><br>
+Emitimos factura con IVA según normativa ecuatoriana.`
+                },
+                {
+                    keys: ['ecuador', 'pais', 'país', 'ciudad', 'donde', 'dónde', 'guayaquil', 'quito'],
+                    answer: `📍 <strong>Somos de Ecuador 🇪🇨</strong><br><br>
+Operamos 100% en línea, atendemos tanto a clientes nacionales como internacionales.<br><br>
+Precios en USD. Facturación con IVA 15% según normativa ecuatoriana.`
+                },
+                {
+                    keys: ['diferencia', 'wordpress', 'wix', 'plantilla', 'template', 'shopify'],
+                    answer: `⚡ <strong>¿Por qué ALYX vs. WordPress?</strong><br><br>
+• WordPress/Wix → plantillas genéricas, lentas, vulnerables<br>
+• ALYX → código nativo, 10x más rápido, único<br><br>
+Nuestras páginas cargan en <2s vs. los 5-8s promedio de WordPress. Eso se traduce en más conversiones y mejor SEO.`
+                },
+            ];
+
+            // ── Helpers ─────────────────────────────────────────
+            function getTime() {
+                return new Date().toLocaleTimeString('es', { hour: '2-digit', minute: '2-digit' });
+            }
+
+            function addMsg(text, sender, skipTime) {
+                const wrap = document.createElement('div');
+                wrap.className = `chat-msg ${sender}`;
+                wrap.innerHTML = `<div class="chat-bubble">${text}</div>${skipTime ? '' : `<div class="chat-time">${getTime()}</div>`}`;
+                msgs.appendChild(wrap);
+                msgs.scrollTop = msgs.scrollHeight;
+                return wrap;
+            }
+
+            function showTyping() {
+                const t = document.createElement('div');
+                t.className = 'chat-msg bot';
+                t.id = 'typingBubble';
+                t.innerHTML = `<div class="chat-bubble chat-typing"><span></span><span></span><span></span></div>`;
+                msgs.appendChild(t);
+                msgs.scrollTop = msgs.scrollHeight;
+                return t;
+            }
+
+            function removeTyping() {
+                const t = document.getElementById('typingBubble');
+                if (t) t.remove();
+            }
+
+            function getBotResponse(text) {
+                const t = text.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+                for (const item of KB) {
+                    if (item.keys.some(k => t.includes(k.normalize('NFD').replace(/[\u0300-\u036f]/g, '')))) {
+                        return item.answer;
+                    }
+                }
+                return `Gracias por tu pregunta ✨<br><br>Para darte una respuesta precisa, escríbenos directamente:<br><br>📧 <a href="mailto:hola@alyxagency.com" style="color:#fff;">hola@alyxagency.com</a><br>o usa el botón de WhatsApp 👇`;
+            }
+
+            function sendMessage(text) {
+                if (!text.trim()) return;
+                input.value = '';
+
+                // User message
+                addMsg(text, 'user');
+
+                // Typing indicator
+                const typing = showTyping();
+                const delay = 800 + Math.random() * 700;
+
+                setTimeout(() => {
+                    removeTyping();
+                    const resp = getBotResponse(text);
+                    addMsg(resp, 'bot');
+                }, delay);
+            }
+
+            // ── Toggle open/close ─────────────────────────────
+            function openChat() {
+                widget.classList.add('open');
+                setTimeout(() => input.focus(), 350);
+            }
+            function closeChat() { widget.classList.remove('open'); }
+
+            toggle.addEventListener('click', () => widget.classList.contains('open') ? closeChat() : openChat());
+            closeBtn.addEventListener('click', closeChat);
+
+            // ── Send handlers ─────────────────────────────────
+            sendBtn.addEventListener('click', () => sendMessage(input.value));
+            input.addEventListener('keydown', e => { if (e.key === 'Enter') sendMessage(input.value); });
+
+            // ── Quick replies ──────────────────────────────────
+            qrs.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const msg = btn.dataset.msg;
+                    sendMessage(msg);
+                });
+            });
+        })();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+User-agent: *
+Allow: /
+
+# Permitir a los AI Bots rastrear la página para que puedan citarla 
+# en ChatGPT, Google AI Overviews, Perplexity y Claude.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Bloquear crawlers de recolección masiva de datos sin atribución (opcional)
+User-agent: CCBot
+Disallow: /
