@@ -11,8 +11,8 @@
   --surface-2: #151515;
   --border: rgba(255, 255, 255, 0.08);
   --text: #ffffff;
-  --muted: #777777;
-  --lighter: #aaaaaa;
+  --muted: #8a8a8a;
+  --lighter: #c0c0c0;
 }
 
 /* ─── RESET & BASE ─── */
@@ -22,6 +22,21 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+*:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 html {
@@ -368,6 +383,7 @@ p {
   letter-spacing: 3px;
   text-transform: uppercase;
   transition: color 0.3s;
+  padding: 0.5rem 0.2rem;
 }
 
 .nav-links a:hover {
@@ -376,6 +392,10 @@ p {
 
 .nav-cta {
   padding: 0.7rem 1.8rem;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: transparent;
   color: var(--text);
@@ -1290,6 +1310,7 @@ footer p {
   letter-spacing: 2px;
   text-transform: uppercase;
   transition: color 0.3s;
+  padding: 0.5rem 0.2rem;
 }
 
 .footer-links a:hover {
@@ -1496,6 +1517,7 @@ footer p {
   .nav-cta {
     padding: 0.55rem 1.2rem;
     font-size: 0.7rem;
+    min-height: 44px;
   }
 
   /* Hero: reduce scroll travel for small screens */
@@ -1589,7 +1611,7 @@ footer p {
 
   /* Chat widget: anchor bottom-left on mobile so WA button stays visible */
   .chat-widget {
-    bottom: 1rem;
+    bottom: calc(1rem + env(safe-area-inset-bottom));
     right: 1rem;
   }
 
@@ -1599,7 +1621,7 @@ footer p {
   }
 
   .wa-button {
-    bottom: 5.5rem;
+    bottom: calc(5.5rem + env(safe-area-inset-bottom));
     right: 1.2rem;
     width: 46px;
     height: 46px;
@@ -1626,7 +1648,7 @@ footer p {
 ═══════════════════════════════════════════════════ */
 .chat-widget {
   position: fixed;
-  bottom: 2rem;
+  bottom: calc(2rem + env(safe-area-inset-bottom));
   right: 2rem;
   z-index: 99999;
   display: flex;
@@ -1797,6 +1819,11 @@ footer p {
   cursor: pointer;
   color: rgba(255, 255, 255, 0.4);
   padding: 4px;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 4px;
   transition: color 0.2s;
 }
@@ -1919,6 +1946,9 @@ footer p {
   letter-spacing: 0.3px;
   transition: background 0.2s, border-color 0.2s, color 0.2s;
   font-family: 'Outfit', sans-serif;
+  display: flex;
+  gap: 6px;
+  align-items: center;
 }
 
 .chat-qr:hover {
@@ -1943,7 +1973,7 @@ footer p {
   border-radius: 8px;
   padding: 0.6rem 0.9rem;
   color: #fff;
-  font-size: 0.85rem;
+  font-size: 16px;
   font-family: 'Outfit', sans-serif;
   outline: none;
   transition: border-color 0.2s;
@@ -1958,8 +1988,8 @@ footer p {
 }
 
 .chat-send {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 8px;
   background: #fff;
   color: #000;
@@ -1982,7 +2012,7 @@ footer p {
 ═══════════════════════════════════════ */
 .wa-button {
   position: fixed;
-  bottom: 7.5rem;
+  bottom: calc(7.5rem + env(safe-area-inset-bottom));
   right: 2.2rem;
   z-index: 100000;
   width: 50px;
@@ -2009,12 +2039,12 @@ footer p {
   }
 
   .chat-widget {
-    bottom: 1rem;
+    bottom: calc(1rem + env(safe-area-inset-bottom));
     right: 1rem;
   }
 
   .wa-button {
-    bottom: 6.5rem;
+    bottom: calc(6.5rem + env(safe-area-inset-bottom));
     right: 1.2rem;
   }
 }
