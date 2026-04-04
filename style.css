@@ -562,7 +562,9 @@ p {
 .marquee-inner {
   display: flex;
   gap: 3rem;
+  width: max-content;
   white-space: nowrap;
+  will-change: transform;
   animation: marquee 20s linear infinite;
 }
 

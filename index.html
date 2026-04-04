@@ -1209,8 +1209,7 @@
         // Applied ONLY to .s-card and .p-card per design spec.
         (function initAntigravityTilt() {
             const isTouch = window.matchMedia('(pointer: coarse)').matches;
-            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            if (isTouch || reducedMotion) return;
+            if (isTouch) return;
 
             // Collect the two targeted card types only
             const tiltCards = document.querySelectorAll('.s-card, .p-card');
